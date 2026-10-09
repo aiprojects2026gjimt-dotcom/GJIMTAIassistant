@@ -1,0 +1,12 @@
+FINAL FIXES
+1. Non Gianjyotian count fixed. The backend now normalizes spaces/punctuation in Registration Type, so 'Non Gianjyotian' rows from your Sheet are counted correctly. Legacy 'Outsider' rows are also included in Non Gianjyotian.
+2. Overall Registration remains all rows with Present = YES.
+3. Gianjyotian = all present donors excluding Non Gianjyotian/Outsider.
+4. Speech pronunciation: visible spelling remains 'Gian Jyoti' / 'Gianjyotian', while NOOR internally pronounces them as 'Gyan Jyoti' / 'Gyan Jyotian'.
+5. Overall live number now continuously pulses/blinks, LIVE badge blinks, and the 3D card has a shimmer/float effect.
+6. After a donor voice announcement finishes, gentle light instrumental tones begin. Speech temporarily pauses the music and music resumes after the announcement.
+7. Browser audio security: on the basement display, interact with the page once after opening (a click/tap/key) if the browser blocks audio autoplay.
+DEPLOYMENT REQUIRED:
+- Replace Code.gs in the SAME Apps Script project and Deploy > Manage deployments > Edit > New version > Deploy.
+- If the /exec URL changes, update API_URL in app.js and dashboard.js.
+- Upload the updated website files and hard-refresh with Ctrl+Shift+R.

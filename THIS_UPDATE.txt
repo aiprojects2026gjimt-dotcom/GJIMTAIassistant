@@ -1,0 +1,7 @@
+REGISTRATION GREETING FIX
+1. The page now shows only ONE greeting before Start Registration.
+2. When Start Registration is clicked, the chat is cleared and NOOR repeats the current registration prompt; a second greeting bubble is not added underneath the old one.
+3. Visible greeting is now 'Sat Shri Akal'.
+4. For speech synthesis, 'Sat Shri Akal' is internally spoken as 'Sat Shree Akaal' to improve pronunciation.
+5. All other registration, dashboard, Google Sheet and voice settings remain unchanged.
+After uploading, use Ctrl+Shift+R to clear the old cached JavaScript.

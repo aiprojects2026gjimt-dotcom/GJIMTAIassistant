@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#b5121b"><title>NOOR | Blood Donation Registration</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<header class="event-header"><div class="event-branding" aria-label="Blood donation camp organizer and partner logos">
+  <img class="brand-gjimt" src="gjimt_logo.jpg" alt="Gian Jyoti Institute of Management and Technology">
+  <div class="brand-other-logos">
+    <img src="pgimer_logo.png" alt="PGIMER Chandigarh">
+    <img src="red_ribbon_logo.png" alt="Red Ribbon Club">
+    <img src="nss_logo.png" alt="National Service Scheme">
+    <img src="ncc_logo.png" alt="National Cadet Corps">
+    <img class="brand-rotaract" src="rotaract_logo.png" alt="Rotaract">
+  </div>
+</div><div class="event-header-main"><div><h1>Blood Donation Camp Registration</h1><p>15 October 2026 • GJIMT, Mohali</p></div><a class="dashLink" href="dashboard.html">◈ Live Dashboard ↗</a></div></header>
+<main>
+<section class="noor"><div class="avatar" id="avatar"><img src="noor_ai.png" alt="NOOR"><div class="mouth"></div></div><h2>GJIMT NOOR</h2><p>AI Registration Assistant</p><div id="voiceState">Ready</div><div class="voiceButtons"><button id="stop">■ Stop Voice</button></div></section>
+<section class="desk"><div class="hero"><b>Give Blood • Give Hope • Save Lives</b><span id="status">Ready</span></div><div id="chat" class="chat"></div>
+<div id="startBox" class="startBox"><button id="startRegistration" class="startRegistration">▶ Start Registration</button></div>
+<div id="actions" class="actions hidden"><button class="yes" data-answer="yes">✓ Yes, already registered</button><button class="no" data-answer="no">＋ No, not registered yet</button></div>
+<div id="donorTypeChoice" class="donorTypeChoice hidden"><h3>Please select donor type</h3><p>Are you a Gian Jyotian or an outsider?</p><div class="actions"><button class="gj" id="gjBtn" type="button">🎓 Gian Jyotian</button><button class="outsider" id="outsiderBtn" type="button">👤 Non Gianjyotian</button></div></div>
+<div id="inputBox" class="input hidden"><input id="input" placeholder="Type your answer here..."><button id="send">Send</button></div>
+<form id="newForm" class="newForm hidden"><h3>New Donor Registration</h3><div class="formGrid"><label>Name<input name="name" required></label><label>Course<select name="course" required><option value="">Select Course</option><option>BCA</option><option>BBA</option><option>B.Com</option><option>MBA</option><option>MCA</option></select></label><label>Semester<select name="semester" required><option value="">Select Semester</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select></label><label>Mobile<input name="mobile" inputmode="numeric" pattern="[0-9]{10}" maxlength="10" required placeholder="10 digit mobile"></label></div><div class="autoFields"><span>Already Registered: <b>NO</b></span><span>Present: <b>YES</b></span><span>Registration Type: <b>New Entry</b></span></div><button class="submitRegistration" type="submit">Save Registration & Mark Present</button></form>
+<form id="outsiderForm" class="newForm hidden">
+    <h3>Non Gianjyotian Donor Registration</h3><p class="formNote">Use this form for donors who are not GJIMT students.</p>
+    <div class="formGrid"><label>Name<input name="name" required placeholder="Full name"></label>
+        <label>Mobile<input name="mobile" inputmode="numeric" pattern="[0-9]{10}" maxlength="10" required placeholder="10 digit mobile">
+        </label><label class="wideField">Organization / Institution <span class="optional">(optional)</span><input name="organization" placeholder="Company, college, organization, etc."></label></div><div class="autoFields"><span>Course: <b>OUTSIDER</b></span><span>Semester: <b>N/A</b>
+        </span><span>Already Registered: <b>NO</b></span><span>Present: <b>YES</b></span>
+        <span>Registration Type: <b>Outsider</b></span></div><button class="submitRegistration" type="submit">Register Outsider & Mark Present
+        </button></form>
+</div></div></section>
+</main><footer>“A Small Act Can Save A Life” • Gian Jyoti Institute of Management & Technology, Mohali</footer><script src="app.js"></script></body></html>

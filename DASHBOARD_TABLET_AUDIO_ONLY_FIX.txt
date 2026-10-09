@@ -1,0 +1,9 @@
+ONLY dashboard.js was changed in this package.
+Main registration page, Sat Shri Akal greeting, Start Registration, forms, welcome page, CSS, backend Code.gs and all other existing logic were left unchanged.
+
+Dashboard fixes:
+- Uses the supplied Apps Script /exec URL.
+- Android/tablet speech is unlocked by the Start Live Dashboard tap.
+- Donor announcements wait until dashboard audio is unlocked.
+- Female/Indian voices remain preferred; if Android hides gender, it falls back to Hindi/English India/default instead of showing the old voice-setup error and becoming silent.
+- Background music volume increased moderately.

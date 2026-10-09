@@ -1,0 +1,8 @@
+Changes:
+- Gian Jyoti -> Gyan Jyoti in NOOR-facing wording for intended pronunciation.
+- Hear NOOR button removed from reception welcome page; automatic short thank-you/proceed-to-basement voice remains.
+- PGI registration desk instruction removed from basement dashboard donor announcement.
+- Removed automatic-fields helper line.
+- New donor spotlight takes over basement dashboard for 50 seconds with donor name and attractive thank-you/life-saving message, then returns to normal dashboard.
+- Each subsequent registration triggers the spotlight again.
+Upload all updated files and hard-refresh with Ctrl+Shift+R.

@@ -1,0 +1,5 @@
+Updated:
+Reception welcome.html: NOOR speaks only 'Thank you. Please proceed to the Basement for the next step.' (also displays only these two lines). Hear NOOR button available if browser blocks autoplay.
+Basement dashboard: NOOR says 'Thank you [name] for registering at the Gian Jyoti Blood Donation Camp. Your kind act can help save a precious life. Please proceed to the PGI registration desk for the next step.' No repeated welcome greeting.
+Voice: both pages use the same preferred female voice selection order as the registration page. If no identifiable female voice is installed, it does not silently select a male default. Install/select female voice on BOTH reception and basement devices. Separate devices can have different OS voice inventories.
+Deploy updated frontend files to host. Existing Code.gs and Google Sheet event backend are unchanged. Keep the dashboard open and click Hear NOOR once to unlock audio if needed. Test a registration across both devices.

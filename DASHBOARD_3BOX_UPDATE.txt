@@ -1,0 +1,6 @@
+UPDATED DASHBOARD COUNTERS
+1. Overall Registration = ALL donors with Present = YES.
+2. Gianjyotian Registration = all present donors except Registration Type 'Non Gianjyotian' / legacy 'Outsider'. This includes pre-registered Gian Jyoti students and new Gianjyotian registrations.
+3. Non Gianjyotian Registration = present donors whose Registration Type is 'Non Gianjyotian' or legacy 'Outsider'.
+4. Overall Registration has a stronger 3D red gradient card, heart icon, LIVE badge, larger number, glow/shadow and shine effect.
+IMPORTANT: Code.gs changed. Replace Code.gs in the same Apps Script project and deploy a NEW VERSION. If the /exec URL changes, update it in app.js and dashboard.js. Upload the updated frontend files and hard-refresh with Ctrl+Shift+R.

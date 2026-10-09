@@ -1,0 +1,15 @@
+NOOR PRONUNCIATION FIX
+
+Visible spelling remains:
+Gian Jyoti
+Gianjyotian
+Non Gianjyotian
+
+ONLY the speech text is converted phonetically:
+Gian Jyoti -> "Gyaan Jyoti"
+Gianjyotian -> "Gyaan Jyoti an"
+Non Gianjyotian -> "Non Gyaan Jyoti an"
+
+This is intentional. Browser Web Speech voices often mispronounce the joined written word "Gianjyotian". Splitting it into "Gyaan Jyoti an" gives the female TTS engine clearer syllables while the screen continues to show the official spelling.
+
+No backend/counting/music/dashboard logic was changed in this package.

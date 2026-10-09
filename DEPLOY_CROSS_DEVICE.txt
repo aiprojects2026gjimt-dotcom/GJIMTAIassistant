@@ -1,0 +1,12 @@
+CROSS-DEVICE NOOR VERSION — IMPORTANT
+Reception index.html -> successful registration opens welcome.html and NOOR says: Thank you [name], please move to the BASEMENT for the next step.
+Basement dashboard.html -> polls the Google Apps Script NOOR_ANNOUNCEMENTS sheet every 2 seconds and automatically announces each new event: Welcome [name], please go to PGI REGISTRATION DESK for further process. This works on separate devices/networks provided both use the same deployed Apps Script backend.
+CRITICAL DEPLOYMENT:
+1. REPLACE Code.gs in existing Apps Script project. Deploy > Manage deployments > Edit > New version > Deploy.
+2. If deployment URL changes, update API_URL in app.js and dashboard.js.
+3. Upload ALL updated frontend files together with images to website host.
+4. At basement, open dashboard.html BEFORE registering test donor. Click 'Hear NOOR' once to unlock browser audio (browser autoplay restriction). Keep dashboard screen on, awake, with sound unmuted.
+5. Backend creates a NOOR_ANNOUNCEMENTS sheet automatically. Dashboard starts from current event count (no old names replayed); future registrations are queued and announced in sequence.
+6. Test on two separate devices: open dashboard first, register a TEST donor at reception, confirm welcome says basement, and dashboard announces PGI desk. Check counts.
+7. Use one dedicated reception kiosk; no sensitive donor contact details are shown on dashboard.
+NOTE: Existing Apps Script JSONP registration write endpoint is not authenticated. Restrict access and add secure authenticated backend before broad public deployment.

@@ -1,0 +1,20 @@
+DASHBOARD COUNTING RULE - V4
+
+OVERALL REGISTRATION:
+Every donor where Present = YES.
+
+NON GIANJYOTIAN REGISTRATION:
+ONLY donors where:
+Present = YES
+AND
+Registration Type = Non Gianjyotian
+
+GIANJYOTIAN REGISTRATION:
+ALL OTHER donors where Present = YES.
+Therefore Pre-Registered, New Entry, Outsider, or any other Registration Type is counted in Gianjyotian unless the Registration Type is exactly Non Gianjyotian.
+
+This update intentionally follows the user's requested Registration Type rule only.
+
+IMPORTANT:
+Replace Code.gs and DEPLOY A NEW VERSION of the Apps Script.
+The dashboard checks for NOOR-3BOX-V4. Until the new backend is deployed, it will correctly show the 'Backend update required' message instead of displaying misleading counts.

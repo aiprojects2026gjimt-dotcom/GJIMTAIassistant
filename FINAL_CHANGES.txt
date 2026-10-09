@@ -1,0 +1,7 @@
+FINAL UPDATE
+1. Total Registration card is now prominently highlighted with a larger count, LIVE badge, stronger 3D styling and emphasis.
+2. 'Hear NOOR' controls were removed. The dashboard donor announcement remains automatic.
+3. New user-supplied combined GJIMT + NAAC logo is used as gjimt_logo.jpg throughout the pages.
+4. All DISPLAY text uses the official spelling 'Gian Jyoti'. Only text sent to speech synthesis is converted internally to 'Gyan Jyoti' for the requested pronunciation.
+5. Existing 50-second donor spotlight remains: new donor name + thank-you/life-saving message, then normal dashboard returns.
+6. Upload ALL files from this package together and hard refresh reception/basement browsers (Ctrl+Shift+R).
