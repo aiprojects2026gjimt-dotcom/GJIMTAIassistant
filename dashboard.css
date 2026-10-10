@@ -202,3 +202,86 @@ header.event-header .event-header-main:before{display:none!important}
  header.event-header .event-header-main p{font-size:10px!important}
  header.event-header .event-header-main a{font-size:10px!important;padding:7px!important}
 }
+
+/* ==============================================================
+   HEADER ACTIONS FIX — Registration followed by Welcome Guests
+   Works with updated dashboard.html; other dashboard styles unchanged.
+   ============================================================== */
+header.event-header .event-header-main > .header-actions {
+  grid-column: 3 !important;
+  grid-row: 1 !important;
+  display: flex !important;
+  flex: 0 0 auto !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  justify-self: end !important;
+  gap: 8px !important;
+  min-width: max-content !important;
+  text-align: right !important;
+}
+header.event-header .event-header-main .header-actions > a {
+  grid-column: auto !important;
+  grid-row: auto !important;
+  justify-self: auto !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 !important;
+  padding: 9px 12px !important;
+  border-radius: 10px !important;
+  color: #fff !important;
+  text-decoration: none !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  line-height: 1.25 !important;
+  white-space: nowrap !important;
+}
+header.event-header .header-actions .registration-btn {
+  background: #b8193b !important;
+}
+header.event-header .header-actions .guest-welcome-button {
+  background: linear-gradient(135deg, #c51d42, #e23d60) !important;
+  box-shadow: 0 3px 9px rgba(155, 24, 54, .22) !important;
+  transition: transform .2s ease, filter .2s ease;
+}
+header.event-header .header-actions .guest-welcome-button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+}
+/* At narrower tablet widths keep the two buttons together and visible. */
+@media (max-width: 1000px) {
+  header.event-header .event-header-main > .header-actions {gap: 5px !important;}
+  header.event-header .event-header-main .header-actions > a {
+    font-size: 10px !important;
+    padding: 8px 9px !important;
+  }
+}
+@media (max-width: 730px) {
+  header.event-header .event-header-main > .header-actions {
+    grid-column: 2 !important;
+    grid-row: 2 !important;
+    flex-wrap: wrap !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+  header.event-header .event-header-main > div:first-child {
+    grid-column: 1 !important;
+    grid-row: 2 !important;
+  }
+}
+@media (max-width: 430px) {
+  header.event-header {
+    grid-template-columns: 1fr !important;
+  }
+  header.event-header .event-header-main > div:first-child {
+    grid-column: 1 !important;
+    grid-row: 2 !important;
+    text-align: center !important;
+  }
+  header.event-header .event-header-main > .header-actions {
+    grid-column: 1 !important;
+    grid-row: 3 !important;
+    justify-self: center !important;
+    justify-content: center !important;
+  }
+}
