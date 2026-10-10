@@ -1,39 +1,341 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>NOOR | Live Dashboard</title><link rel="stylesheet" href="dashboard.css"></head><body><div id="audioStart" class="audio-start">
-  <div class="audio-start-card">
-    <div class="audio-heart">♥</div>
-    <h2>Gian Jyoti Blood Donation Camp</h2>
-    <p>Start the live basement dashboard with NOOR announcements and soft background music.</p>
-    <button id="startDashboard" type="button">▶ Start Live Dashboard</button>
-    <small>One tap is required by the browser to enable continuous audio.</small>
-  </div>
-</div><header class="event-header"><div class="event-branding" aria-label="Blood donation camp organizer and partner logos">
-  <img class="brand-gjimt" src="gjimt_logo.jpg" alt="Gian Jyoti Institute of Management and Technology">
-  <div class="brand-other-logos">
-    <img src="pgimer_logo.png" alt="PGIMER Chandigarh">
-    <img src="red_ribbon_logo.png" alt="Red Ribbon Club">
-    <img src="nss_logo.png" alt="National Service Scheme">
-    <img src="ncc_logo.png" alt="National Cadet Corps">
-    <img class="brand-rotaract" src="rotaract_logo.png" alt="Rotaract">
-  </div>
-</div> 
-<div class="guest-button-row">
-  <a href="guest-welcome.html"
-     class="guest-welcome-button">
-    ♛ Welcome Guests ↗
-  </a>
-</div>
 
-  <div class="event-header-main"><div><small>GJIMT • 15 OCTOBER 2026</small><h1>Blood Donation • Live Dashboard</h1><p>Every drop carries hope.</p></div><a href="index.html">← Registration</a></div></header><div id="donorSpotlight" class="donor-spotlight" aria-live="assertive">
-<div class="spotlight-card"><div class="spotlight-heart">♥</div>
-<div class="spotlight-kicker">GYAN JYOTI BLOOD DONATION CAMP</div>
-<h2 id="spotlightName">Thank you!</h2>
-<p id="spotlightMessage">Your generous act can help save lives and bring hope to many families.</p>
-<div class="spotlight-line">Every drop counts • Every donor matters</div></div></div><main><div class="grid"><section class="intro"><div class="live">● LIVE • AUTO REFRESH</div><h2>Welcome to the Donation Dashboard</h2><p>Only donors marked <b>PRESENT = YES</b> are included in the overall registration figure.</p><div class="cards">
-<article class="overall-card"><div class="card-icon">♥</div><span>OVERALL REGISTRATION</span><strong id="total">—</strong><small>All donors marked present</small><div class="shine"></div></article>
-<article class="gian-card"><div class="card-icon">GJ</div><span>GIANJYOTIAN REGISTRATION</span><strong id="gianCount">—</strong><small>Gian Jyoti donors marked present</small></article>
-<article class="non-gian-card"><div class="card-icon">✦</div><span>NON GIANJYOTIAN REGISTRATION</span><strong id="nonGianCount">—</strong><small>External donors marked present</small></article>
-</div><p class="sync" id="sync">Connecting to Google Sheet…</p>
-  <div class="dashboard-association">
-    
-    <img src="association.png" alt="Department of Transfusion Medicine, PGIMER Chandigarh and Red Ribbon Club, SAS Nagar">
-  </div></section><aside class="noor"><div class="halo"><img src="noor_ai.png" alt="NOOR" id="avatar"></div><h2>GJIMT-NOOR AI Assistant</h2><div class="donor-alert" id="donorAlert" aria-live="polite">Waiting for the next registration ♥</div><p id="line">Gian Jyoti Blood Donation Camp. Every donor brings hope and helps save lives.</p></aside></div><div class="quote">♥ &nbsp; Give blood. Share life. Become someone's reason to smile.</div></main><script src="dashboard.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <title>NOOR | Live Dashboard</title>
+
+  <link rel="stylesheet" href="dashboard.css">
+
+  <!-- Styling for header buttons only -->
+  <style>
+    .event-header-main .header-actions {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .event-header-main .header-actions a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 9px 12px;
+      border-radius: 10px;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .event-header-main .header-actions .registration-btn {
+      background: #b8193b;
+    }
+
+    .event-header-main .header-actions .guest-welcome-button {
+      background: linear-gradient(135deg, #c51d42, #e23d60);
+      box-shadow: 0 3px 9px rgba(155, 24, 54, 0.2);
+      transition: transform 0.2s ease, filter 0.2s ease;
+    }
+
+    .event-header-main .header-actions .guest-welcome-button:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.08);
+    }
+
+    @media (max-width: 700px) {
+      .event-header-main .header-actions {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 6px;
+      }
+
+      .event-header-main .header-actions a {
+        font-size: 11px;
+        padding: 8px 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- AUDIO START SCREEN -->
+  <div id="audioStart" class="audio-start">
+    <div class="audio-start-card">
+
+      <div class="audio-heart">♥</div>
+
+      <h2>Gian Jyoti Blood Donation Camp</h2>
+
+      <p>
+        Start the live basement dashboard with NOOR
+        announcements and soft background music.
+      </p>
+
+      <button id="startDashboard" type="button">
+        ▶ Start Live Dashboard
+      </button>
+
+      <small>
+        One tap is required by the browser to enable continuous audio.
+      </small>
+
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="event-header">
+
+    <!-- ALL ORIGINAL LOGOS -->
+    <div class="event-branding"
+         aria-label="Blood donation camp organizer and partner logos">
+
+      <img
+        class="brand-gjimt"
+        src="gjimt_logo.jpg"
+        alt="Gian Jyoti Institute of Management and Technology"
+      >
+
+      <div class="brand-other-logos">
+
+        <img
+          src="pgimer_logo.png"
+          alt="PGIMER Chandigarh"
+        >
+
+        <img
+          src="red_ribbon_logo.png"
+          alt="Red Ribbon Club"
+        >
+
+        <img
+          src="nss_logo.png"
+          alt="National Service Scheme"
+        >
+
+        <img
+          src="ncc_logo.png"
+          alt="National Cadet Corps"
+        >
+
+        <img
+          class="brand-rotaract"
+          src="rotaract_logo.png"
+          alt="Rotaract"
+        >
+
+      </div>
+    </div>
+
+    <!-- DASHBOARD TITLE AND BUTTONS -->
+    <div class="event-header-main">
+
+      <div>
+        <small>GJIMT • 15 OCTOBER 2026</small>
+
+        <h1>Blood Donation • Live Dashboard</h1>
+
+        <p>Every drop carries hope.</p>
+      </div>
+
+      <!-- BOTH BUTTONS ON THE RIGHT -->
+      <div class="header-actions">
+
+        <a href="index.html" class="registration-btn">
+          ← Registration
+        </a>
+
+        <a href="guest-welcome.html"
+           class="guest-welcome-button">
+          ♛ Welcome Guests ↗
+        </a>
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <!-- DONOR SPOTLIGHT -->
+  <div
+    id="donorSpotlight"
+    class="donor-spotlight"
+    aria-live="assertive"
+  >
+
+    <div class="spotlight-card">
+
+      <div class="spotlight-heart">♥</div>
+
+      <div class="spotlight-kicker">
+        GYAN JYOTI BLOOD DONATION CAMP
+      </div>
+
+      <h2 id="spotlightName">
+        Thank you!
+      </h2>
+
+      <p id="spotlightMessage">
+        Your generous act can help save lives
+        and bring hope to many families.
+      </p>
+
+      <div class="spotlight-line">
+        Every drop counts • Every donor matters
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MAIN DASHBOARD -->
+  <main>
+
+    <div class="grid">
+
+      <!-- LEFT SIDE -->
+      <section class="intro">
+
+        <div class="live">
+          ● LIVE • AUTO REFRESH
+        </div>
+
+        <h2>
+          Welcome to the Donation Dashboard
+        </h2>
+
+        <p>
+          Only donors marked
+          <b>PRESENT = YES</b>
+          are included in the overall registration figure.
+        </p>
+
+        <!-- REGISTRATION COUNTERS -->
+        <div class="cards">
+
+          <!-- OVERALL -->
+          <article class="overall-card">
+
+            <div class="card-icon">♥</div>
+
+            <span>
+              OVERALL REGISTRATION
+            </span>
+
+            <strong id="total">—</strong>
+
+            <small>
+              All donors marked present
+            </small>
+
+            <div class="shine"></div>
+
+          </article>
+
+          <!-- GIANJYOTIAN -->
+          <article class="gian-card">
+
+            <div class="card-icon">GJ</div>
+
+            <span>
+              GIANJYOTIAN REGISTRATION
+            </span>
+
+            <strong id="gianCount">—</strong>
+
+            <small>
+              Gian Jyoti donors marked present
+            </small>
+
+          </article>
+
+          <!-- NON GIANJYOTIAN -->
+          <article class="non-gian-card">
+
+            <div class="card-icon">✦</div>
+
+            <span>
+              NON GIANJYOTIAN REGISTRATION
+            </span>
+
+            <strong id="nonGianCount">—</strong>
+
+            <small>
+              External donors marked present
+            </small>
+
+          </article>
+
+        </div>
+
+        <!-- GOOGLE SHEET STATUS -->
+        <p class="sync" id="sync">
+          Connecting to Google Sheet…
+        </p>
+
+        <!-- ASSOCIATION PARTNERS IMAGE -->
+        <div class="dashboard-association">
+
+          <img
+            src="association.png"
+            alt="Department of Transfusion Medicine,
+            PGIMER Chandigarh and Red Ribbon Club,
+            SAS Nagar"
+          >
+
+        </div>
+
+      </section>
+
+      <!-- RIGHT SIDE: NOOR AI ASSISTANT -->
+      <aside class="noor">
+
+        <div class="halo">
+
+          <img
+            src="noor_ai.png"
+            alt="NOOR"
+            id="avatar"
+          >
+
+        </div>
+
+        <h2>
+          GJIMT-NOOR AI Assistant
+        </h2>
+
+        <div
+          class="donor-alert"
+          id="donorAlert"
+          aria-live="polite"
+        >
+          Waiting for the next registration ♥
+        </div>
+
+        <p id="line">
+          Gian Jyoti Blood Donation Camp.
+          Every donor brings hope and helps save lives.
+        </p>
+
+      </aside>
+
+    </div>
+
+    <!-- BOTTOM QUOTE -->
+    <div class="quote">
+      ♥ &nbsp; Give blood. Share life.
+      Become someone's reason to smile.
+    </div>
+
+  </main>
+
+  <!-- ORIGINAL DASHBOARD JAVASCRIPT -->
+  <script src="dashboard.js"></script>
+
+</body>
+</html>
